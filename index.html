@@ -123,10 +123,20 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-md-8">
+<<<<<<< HEAD
               <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
                 <strong>Holy guacamole!</strong> You should check in on some of those fields below.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
+=======
+<<<<<<< HEAD
+              <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
+                <strong>Terima Kasih!</strong> Pesan anda telah kami terima.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+=======
+>>>>>>> 7d6cd11a8bc6fb065de987f7c187dedf3b0e49c5
+>>>>>>> 586172553925dc69ac5f370a96fd2fd9be4fe34b
               <form name="subscribe">
                 <div class="mb-3">
                   <label for="name" class="form-label ">Name</label>
@@ -140,9 +150,15 @@
                   <label for="saran" class="form-label ">Saran</label>
                   <textarea class="form-control" id="saran" rows="3" name="saran"></textarea>
                 </div>
+<<<<<<< HEAD
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button class="btn btn-primary" type="button" disabled>
                   <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+=======
+                <button type="submit" class="btn btn-primary btn-kirim">Submit</button>
+                <button class="btn btn-primaryv btn-loading d-none" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+>>>>>>> 586172553925dc69ac5f370a96fd2fd9be4fe34b
                   Loading...
                 </button>
               </form>
@@ -161,6 +177,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzvnOZIjbhc856Um5NNbXg98_Y9_y1P860qAqmPsRAd4evIkLUmqRbqV79eXqWeHboa/exec'
+<<<<<<< HEAD
+      const form = document.forms['subscribe'];
+      const btnKirim = document.querySelector ('.btn-kirim');
+      const btnLoading = document.querySelector ('.btn-loading');
+      const myAlert = document.querySelector ('.my-alert');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            myAlert.classList.toggle('d-none');
+            console.log('Success!', response)})
+=======
       const form = document.forms['subscribe']
       const btnKirim = document.querySelector ('.btn-kirim');
       const btnLoading = document.querySelector ('.btn-loading');
@@ -173,12 +208,17 @@
         btnLoading.classList.toggle('d-none');
         btnKirim.classList.toggle('d-none');
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+<<<<<<< HEAD
           .then(response => { 
             btnLoading.classList.toggle('d-none');
             btnKirim.classList.toggle('d-none');
             myAlert.classList.toggle('d-none');
         
             console.log('Success!', response))
+=======
+          .then(response => console.log('Success!', response))
+>>>>>>> 7d6cd11a8bc6fb065de987f7c187dedf3b0e49c5
+>>>>>>> 586172553925dc69ac5f370a96fd2fd9be4fe34b
           .catch(error => console.error('Error!', error.message))
       })
     </script>
